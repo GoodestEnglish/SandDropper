@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class AsyncTorchLevitateImagePlacer extends ImagePlacer {
-    private final List<BlockFace> facing = ImmutableList.of(BlockFace.NORTH, BlockFace.SOUTH, BlockFace.EAST, BlockFace.WEST); // TODO: 27/6/2023 need?
+    private final List<BlockFace> facing = ImmutableList.of(BlockFace.NORTH, BlockFace.SOUTH, BlockFace.EAST, BlockFace.WEST);
 
     public AsyncTorchLevitateImagePlacer(Location location, BufferedImage image) {
         super(location, image);
@@ -46,7 +46,7 @@ public class AsyncTorchLevitateImagePlacer extends ImagePlacer {
 
         final long start = System.currentTimeMillis();
         final int[][] rgb = CompletableFuture.supplyAsync(() -> ImageUtil.convertToRGB(image)).join();
-        int y = 0;
+        int y = 1;
 
         if (rgb.length != rgb[0].length) {
             throw new UnsupportedOperationException("The array is not a matrix!");

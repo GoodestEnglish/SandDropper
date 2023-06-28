@@ -16,6 +16,7 @@ public class SandColor {
         //Sand
         put(new Color(219, 212, 160), Material.SAND);
         put(new Color(169, 88, 33), Material.RED_SAND);
+        put(new Color(128, 125, 123), Material.GRAVEL);
         //Concrete Powder
         put(new Color(227, 229, 229), Material.WHITE_CONCRETE_POWDER);
         put(new Color(155, 155, 148), Material.LIGHT_GRAY_CONCRETE_POWDER);

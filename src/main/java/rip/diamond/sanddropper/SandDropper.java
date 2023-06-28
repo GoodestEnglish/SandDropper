@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import lombok.Getter;
 import me.goodestenglish.api.DiamondAPI;
 import org.bukkit.plugin.java.JavaPlugin;
+import rip.diamond.sanddropper.listener.GeneralListener;
 import rip.diamond.sanddropper.register.CommandRegister;
 import rip.diamond.sanddropper.register.DatapackRegister;
 import rip.diamond.sanddropper.service.FileService;
@@ -35,6 +36,8 @@ public final class SandDropper extends JavaPlugin {
 
         CommandRegister.setup(this);
         DatapackRegister.setup(this);
+
+        getServer().getPluginManager().registerEvents(new GeneralListener(), this);
     }
 
     @Override

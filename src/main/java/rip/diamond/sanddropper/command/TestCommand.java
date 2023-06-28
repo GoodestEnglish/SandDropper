@@ -4,6 +4,7 @@ import me.goodestenglish.api.util.Common;
 import me.goodestenglish.api.util.command.annotation.Command;
 import me.goodestenglish.api.util.command.annotation.Require;
 import me.goodestenglish.api.util.command.annotation.Sender;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import rip.diamond.sanddropper.SandDropper;
 import rip.diamond.sanddropper.placer.impl.AsyncTorchLevitateImagePlacer;
@@ -21,7 +22,11 @@ public class TestCommand {
     @Command(name = "", desc = "")
     @Require("op")
     public void root(@Sender Player player, int r, int g, int b) {
-        Common.sendMessage(player, SandColor.getSandByNearestColor(new Color(r, g, b)).name());
+        for (Material m: Material.values()) {
+            if (m.hasGravity()) {
+                Common.broadcastMessage(m.name());
+            }
+        }
     }
 
     @Command(name = "2", desc = "")
