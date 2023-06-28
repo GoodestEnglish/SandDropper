@@ -1,0 +1,5 @@
+name: SandDropper
+version: '${version}'
+main: rip.diamond.sanddropper.SandDropper
+api-version: 1.19
+author: GoodestEnglish
