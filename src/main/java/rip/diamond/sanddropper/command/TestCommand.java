@@ -9,10 +9,8 @@ import org.bukkit.entity.Player;
 import rip.diamond.sanddropper.SandDropper;
 import rip.diamond.sanddropper.placer.impl.AsyncTorchLevitateImagePlacer;
 import rip.diamond.sanddropper.util.ImageUtil;
-import rip.diamond.sanddropper.util.SandColor;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;

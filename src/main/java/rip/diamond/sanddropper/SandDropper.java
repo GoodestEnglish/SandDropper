@@ -5,11 +5,11 @@ import com.google.gson.GsonBuilder;
 import lombok.Getter;
 import me.goodestenglish.api.DiamondAPI;
 import org.bukkit.plugin.java.JavaPlugin;
+import rip.diamond.sanddropper.listener.FrameListener;
 import rip.diamond.sanddropper.listener.GeneralListener;
 import rip.diamond.sanddropper.register.CommandRegister;
 import rip.diamond.sanddropper.register.DatapackRegister;
 import rip.diamond.sanddropper.service.FileService;
-import rip.diamond.sanddropper.service.ImageService;
 import rip.diamond.sanddropper.util.SandColor;
 
 import java.text.DecimalFormat;
@@ -22,7 +22,6 @@ public final class SandDropper extends JavaPlugin {
     public static Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     @Getter private FileService fileService;
-    @Getter private ImageService imageService;
 
     @Override
     public void onEnable() {
@@ -32,12 +31,12 @@ public final class SandDropper extends JavaPlugin {
         SandColor.init();
 
         fileService = new FileService("plugins/" + getDescription().getName() + "/pictures");
-        imageService = new ImageService();
 
         CommandRegister.setup(this);
         DatapackRegister.setup(this);
 
         getServer().getPluginManager().registerEvents(new GeneralListener(), this);
+        getServer().getPluginManager().registerEvents(new FrameListener(), this);
     }
 
     @Override
