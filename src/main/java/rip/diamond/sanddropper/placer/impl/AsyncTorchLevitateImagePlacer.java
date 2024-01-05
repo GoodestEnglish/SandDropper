@@ -60,7 +60,7 @@ public class AsyncTorchLevitateImagePlacer extends ImagePlacer {
             }
         }
 
-        //Remember: This list of locations starts from x = 0, then x = 1... etc
+        //Remember: This list of locations starts from x = 0, then x = 1... etc, and change to y = 0, y = 1... then change back to x = 0, x = 1...
         List<ShapeUtil.Location> locations = ShapeUtil.createSpiral(rgb.length);
         locations.sort(Comparator.comparing(ShapeUtil.Location::getOrder));
 
